@@ -1,0 +1,80 @@
+{
+    "widgets": [
+      {
+        "type": "metric",
+        "x": 0,
+        "y": 0,
+        "width": 6,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            [ "AWS/EC2", "CPUUtilization", "InstanceId", "i-064921da3cd78f9f6" ]
+          ],
+          "title": "CPU Utilization",
+          "stat": "Average",
+          "period": 300,
+          "region": "us-east-1",
+          "view": "timeSeries",
+          "stacked": false
+        }
+      },
+      {
+        "type": "metric",
+        "x": 6,
+        "y": 0,
+        "width": 6,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            [ "AWS/EC2", "NetworkIn", "InstanceId", "i-064921da3cd78f9f6" ],
+            [ "AWS/EC2", "NetworkOut", "InstanceId", "i-064921da3cd78f9f6" ]
+          ],
+          "title": "Network InOut",
+          "stat": "Sum",
+          "period": 300,
+          "region": "us-east-1",
+          "view": "timeSeries",
+          "stacked": false
+        }
+      },
+      {
+        "type": "metric",
+        "x": 0,
+        "y": 6,
+        "width": 6,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            [ "AWS/EC2", "DiskReadOps", "InstanceId", "i-064921da3cd78f9f6" ],
+            [ "AWS/EC2", "DiskWriteOps", "InstanceId", "i-064921da3cd78f9f6" ]
+          ],
+          "title": "Disk ReadWrite Ops",
+          "stat": "Sum",
+          "period": 300,
+          "region": "us-east-1",
+          "view": "timeSeries",
+          "stacked": false
+        }
+      },
+      {
+        "type": "metric",
+        "x": 6,
+        "y": 6,
+        "width": 6,
+        "height": 6,
+        "properties": {
+          "metrics": [
+            [ "AWS/EC2", "StatusCheckFailed", "InstanceId", "i-064921da3cd78f9f6" ],
+            [ "AWS/EC2", "StatusCheckFailed_Instance", "InstanceId", "i-064921da3cd78f9f6" ],
+            [ "AWS/EC2", "StatusCheckFailed_System", "InstanceId", "i-064921da3cd78f9f6" ]
+          ],
+          "title": "Status Check Failures",
+          "stat": "Maximum",
+          "period": 300,
+          "region": "us-east-1",
+          "view": "timeSeries",
+          "stacked": false
+        }
+      }
+    ]
+  }

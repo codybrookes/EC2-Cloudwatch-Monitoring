@@ -1,0 +1,108 @@
+#To run the script use this - aws cloudformation deploy --template-file cloudwatch/alarms.yml^ --stack-name EC2-Monitoring-Stack^ --parameter-overrides InstanceId=i-064921da3cd78f9f6
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 Alarms for CloudWatch Monitoring Stack 
+
+Parameters:
+  InstanceId:
+    Type: String
+    Description: i-064921da3cd78f9f6
+
+Resources:
+  CPUAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: High-CPU-Utilization
+      MetricName: CPUUtilization
+      Namespace: AWS/EC2
+      Statistic: Average
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 80
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref InstanceId
+      TreatMissingData: notBreaching
+
+  StatusCheckAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: Failed-System-Status-Check
+      MetricName: StatusCheckFailed_System
+      Namespace: AWS/EC2
+      Statistic: Maximum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref InstanceId
+      TreatMissingData: notBreaching
+  NetworkInAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: High-Network-In-Utilization
+      MetricName: NetworkIn
+      Namespace: AWS/EC2
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 10000000  # Example threshold (10 MB)
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref InstanceId
+      TreatMissingData: notBreaching
+
+  # Network Out Alarm
+  NetworkOutAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: High-Network-Out-Utilization
+      MetricName: NetworkOut
+      Namespace: AWS/EC2
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 10000000  # Example threshold (10 MB)
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref InstanceId
+      TreatMissingData: notBreaching
+
+  # Disk Read Operations Alarm
+  DiskReadOpsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: High-Disk-Read-Operations
+      MetricName: DiskReadOps
+      Namespace: AWS/EC2
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 1000  # Example threshold
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref InstanceId
+      TreatMissingData: notBreaching
+
+  # Disk Write Operations Alarm
+  DiskWriteOpsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: High-Disk-Write-Operations
+      MetricName: DiskWriteOps
+      Namespace: AWS/EC2
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 1000  # Example threshold
+      ComparisonOperator: GreaterThanThreshold
+      Dimensions:
+        - Name: InstanceId
+          Value: !Ref InstanceId
+      TreatMissingData: notBreaching
