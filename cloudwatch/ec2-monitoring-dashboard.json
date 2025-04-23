@@ -8,7 +8,7 @@
         "height": 6,
         "properties": {
           "metrics": [
-            [ "AWS/EC2", "CPUUtilization", "InstanceId", "i-064921da3cd78f9f6" ]
+            [ "AWS/EC2", "CPUUtilization", "InstanceId", "i-xxxxxxxxxxxxxxxxx" ]
           ],
           "title": "CPU Utilization",
           "stat": "Average",
@@ -26,8 +26,8 @@
         "height": 6,
         "properties": {
           "metrics": [
-            [ "AWS/EC2", "NetworkIn", "InstanceId", "i-064921da3cd78f9f6" ],
-            [ "AWS/EC2", "NetworkOut", "InstanceId", "i-064921da3cd78f9f6" ]
+            [ "AWS/EC2", "NetworkIn", "InstanceId", "i-xxxxxxxxxxxxxxxxx" ],
+            [ "AWS/EC2", "NetworkOut", "InstanceId", "i-xxxxxxxxxxxxxxxxx" ]
           ],
           "title": "Network InOut",
           "stat": "Sum",
@@ -45,8 +45,8 @@
         "height": 6,
         "properties": {
           "metrics": [
-            [ "AWS/EC2", "DiskReadOps", "InstanceId", "i-064921da3cd78f9f6" ],
-            [ "AWS/EC2", "DiskWriteOps", "InstanceId", "i-064921da3cd78f9f6" ]
+            [ "AWS/EC2", "DiskReadOps", "InstanceId", "i-xxxxxxxxxxxxxxxxx" ],
+            [ "AWS/EC2", "DiskWriteOps", "InstanceId", "i-xxxxxxxxxxxxxxxxx" ]
           ],
           "title": "Disk ReadWrite Ops",
           "stat": "Sum",
@@ -64,9 +64,9 @@
         "height": 6,
         "properties": {
           "metrics": [
-            [ "AWS/EC2", "StatusCheckFailed", "InstanceId", "i-064921da3cd78f9f6" ],
-            [ "AWS/EC2", "StatusCheckFailed_Instance", "InstanceId", "i-064921da3cd78f9f6" ],
-            [ "AWS/EC2", "StatusCheckFailed_System", "InstanceId", "i-064921da3cd78f9f6" ]
+            [ "AWS/EC2", "StatusCheckFailed", "InstanceId", "i-xxxxxxxxxxxxxxxxx" ],
+            [ "AWS/EC2", "StatusCheckFailed_Instance", "InstanceId", "i-xxxxxxxxxxxxxxxxx" ],
+            [ "AWS/EC2", "StatusCheckFailed_System", "InstanceId", "i-xxxxxxxxxxxxxxxxx" ]
           ],
           "title": "Status Check Failures",
           "stat": "Maximum",
