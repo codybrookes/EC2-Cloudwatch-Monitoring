@@ -6,7 +6,7 @@ Description: EC2 Alarms for CloudWatch Monitoring Stack
 Parameters:
   InstanceId:
     Type: String
-    Description: i-064921da3cd78f9f6
+    Description: i-xxxxxxxxxxxxxxxxx
 
 Resources:
   CPUAlarm:
