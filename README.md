@@ -20,7 +20,6 @@ This project sets up a full-stack observability solution for an EC2-hosted websi
 - **Amazon CloudWatch**
 - **CloudFormation** for infrastructure setup
 - **Shell scripts** for agent installation
-- **GitHub Actions** (optional for CI/CD)
 
 ## 📁 Repo Structure
 
@@ -31,9 +30,7 @@ ec2-cloudwatch-monitoring/
 │   └── alarms.yml                        # CloudFormation template for alarms
 ├── scripts/
 │   └── install-cloudwatch-agent.sh       # CloudWatch Agent setup script
-├── .github/
-│   └── workflows/
-│       └── deploy-monitoring.yml         # Optional CI/CD workflow
+
 ├── README.md                             # You're here 😎
 ```
 
@@ -85,17 +82,6 @@ This will create:
 
 ---
 
-## 🔔 Optional: GitHub Actions Workflow
-
-To deploy the alarm stack via CI/CD:
-
-1. Create GitHub repo secrets:
-   - `AWS_ACCESS_KEY_ID`
-   - `AWS_SECRET_ACCESS_KEY`
-
-2. Trigger workflow manually in the **Actions** tab or via `workflow_dispatch`
-
----
 
 ## 📊 Metrics Monitored
 
